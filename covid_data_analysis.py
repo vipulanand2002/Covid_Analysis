@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd 
 
 #Step: 1 - Load the dataset from URL for COVID-19 data
 # Load dataset from URL
@@ -41,3 +41,6 @@ df_filtered.loc[:, 'date'] = pd.to_datetime(df_filtered['date'])
 
 # Remove duplicates safely
 df_filtered = df_filtered.drop_duplicates().copy()
+
+# Saving Filtered Data
+df_filtered.to_csv("cleaned_covid_data.csv", index=False)  # Save processed data
